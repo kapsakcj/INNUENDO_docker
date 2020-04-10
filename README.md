@@ -71,7 +71,7 @@ To load the predefined data, do the following:
 
 ```
 
-# Enter the build_files directory
+# Enter the build_files directory2
 cd <innuendo_docker_directory>/build_files
 
 # Run the script to load the data
