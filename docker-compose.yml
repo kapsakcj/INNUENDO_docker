@@ -19,7 +19,7 @@ services:
   # application and mapping of the fastq files
   # bfrgoncalves/innuendo_docker_frontend:1.0.0
   frontend:
-    image: bfrgoncalves/innuendo_docker_frontend:1.0.0
+    image: kapsakcj/innuendo_docker_frontend:1.0.0
     privileged: true
     restart: on-failure
     volumes:
