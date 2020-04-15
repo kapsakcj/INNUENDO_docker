@@ -1,5 +1,9 @@
 FROM ubuntu:16.04
-MAINTAINER Bruno Gonçalves <bfgoncalves@medicina.ulisboa.pt>
+# Metadata
+LABEL original.maintainer = "Bruno Gonçalves"
+LABEL original.maintainer.email = "bfgoncalves@medicina.ulisboa.pt"
+LABEL maintainer = "Curtis Kapsak"
+LABEL maintainer.email = "pjx8@cdc.gov"
 
 # Create frontend folder
 WORKDIR /Frontend/
@@ -12,7 +16,7 @@ RUN apt-get update && apt-get install -y git python-pip postgresql \
 
 
 # Get INNUENDO_REST_API repository
-RUN git clone https://github.com/bfrgoncalves/INNUENDO_REST_API.git
+RUN git clone https://github.com/kapsakcj/INNUENDO_REST_API.git
 
 # Change to repository
 WORKDIR /Frontend/
@@ -22,7 +26,7 @@ WORKDIR INNUENDO_REST_API
 # RUN git checkout ES6-version
 
 # Install and initialize virtual env
-RUN pip install virtualenv
+RUN pip install --upgrade pip && pip install virtualenv
 RUN virtualenv flask
 
 # Install repository dependencies
