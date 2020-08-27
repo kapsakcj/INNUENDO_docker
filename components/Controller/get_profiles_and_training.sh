@@ -103,6 +103,31 @@ if [ ! -d "${output_dir}/${schema_version}/schemas/schema_seed_campy_roary_V5" ]
     find *.fasta -exec echo ${output_dir}/${schema_version}/schemas/schema_seed_campy_roary_V5/{} >> listGenes.txt \;
 fi
 
+# Get Vibrio cholera schema. If already there, doesnt do nothing.
+if [ ! -d "${output_dir}/${schema_version}/schemas/vcholerae_schema_v2" ]; then
+
+    echo "---> Downloading Vibrio cholera schema  ..."
+    cd ${output_dir}/${schema_version}/schemas/
+    #wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/Salmonella_schema.tar.gz
+    wget https://github.com/kapsakcj/INNUENDO_schemas/raw/master/vcholerae_schema_v2.tar.gz
+
+    # we will need this line later
+    #wget https://raw.githubusercontent.com/kapsakcj/INNUENDO_schemas/master/Vcholera_correct_classification.txt
+
+    echo "---> Extracting Vibrio cholera schema  ..."
+    tar zxf vcholerae_schema_v2.tar.gz
+    rm -rf vcholerae_schema_v2.tar.gz
+
+    echo "---> Parsing bad formatted alleles  ..."
+    cd ${output_dir}/${schema_version}/schemas/vcholerae_schema_v2
+    grep -P "[\x80-\xFF]" *.fasta | cut -f1 -d":" > bad_files.txt
+    for i in `cat bad_files.txt`; do echo $i; cat ${i} | tr -d '\200-\377' > ${i}.mod; done
+    for i in `ls *.mod`; do mv $i ${i%.mod}; done
+
+    find ${output_dir}/${schema_version}/schemas/vcholerae_schema_v2/*.fasta > listGenes.txt
+
+fi
+
 # Create prodigal_training_files dir if dont exist
 mkdir -p ${output_dir}/prodigal_training_files
 
@@ -112,9 +137,12 @@ count_p=$(ls ${output_dir}/prodigal_training_files | wc -l)
 # Get Prodigal training files
 if [ $count_p -eq 1 ]; then
 
-    echo "---> Downloading prodigal training file  ..."
+    #echo "---> Downloading prodigal training file  ..."
     cd ${output_dir}/prodigal_training_files
-    git clone https://github.com/mickaelsilva/prodigal_training_files.git
+   # git clone https://github.com/mickaelsilva/prodigal_training_files.git
+
+    echo "---> Downloading prodigal training file from Curtis' forked repo of prodigal training files ..."
+    git clone https://github.com/kapsakcj/prodigal_training_files.git
 
 fi
 
