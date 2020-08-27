@@ -161,7 +161,8 @@ ALL_SPECIES = [
     "E.coli",
     "Yersinia",
     "Campylobacter",
-    "Salmonella"
+    "Salmonella",
+    "Vibrio"
 ]
 
 # Association between species ID in the platform with the species name
@@ -169,7 +170,8 @@ SPECIES_CORRESPONDENCE = {
     "E.coli": "Escherichia coli",
     "Yersinia": "Yersinia enterocolitica",
     "Salmonella": "Salmonella enterica",
-    "Campylobacter": "Campylobacter jejuni"
+    "Campylobacter": "Campylobacter jejuni",
+    "Vibrio": "Vibrio cholerae"
 };
 
 
@@ -211,7 +213,8 @@ wg_index_correspondece = {
         "E.coli": "/INNUENDO/inputs/v1/indexes/ecoli_wg",
         "Yersinia": "/INNUENDO/inputs/v1/indexes/yersinia_wg",
         "Salmonella": "/INNUENDO/inputs/v1/indexes/salmonella_wg",
-        "Campylobacter": "/INNUENDO/inputs/v1/indexes/campy_wg"
+        "Campylobacter": "/INNUENDO/inputs/v1/indexes/campy_wg",
+        "Vibrio": "/INNUENDO/inputs/v1/indexes/vibrio_wg"
     }
 }
 
@@ -222,7 +225,8 @@ core_index_correspondece = {
         "E.coli": "/INNUENDO/inputs/v1/indexes/ecoli_core",
         "Yersinia": "/INNUENDO/inputs/v1/indexes/yersinia_core",
         "Salmonella": "/INNUENDO/inputs/v1/indexes/salmonella_core",
-        "Campylobacter": "/INNUENDO/inputs/v1/indexes/campy_core"
+        "Campylobacter": "/INNUENDO/inputs/v1/indexes/campy_core",
+        "Vibrio": "/INNUENDO/inputs/v1/indexes/vibrio_core"
     }
 }
 
@@ -232,7 +236,8 @@ wg_headers_correspondece = {
         "E.coli": "/INNUENDO/inputs/v1/core_lists/ecoli_headers_wg.txt",
         "Yersinia": "/INNUENDO/inputs/v1/core_lists/yersinia_headers_wg.txt",
         "Salmonella": "/INNUENDO/inputs/v1/core_lists/salmonella_headers_wg.txt",
-        "Campylobacter": "/INNUENDO/inputs/v1/core_lists/campy_headers_wg.txt"
+        "Campylobacter": "/INNUENDO/inputs/v1/core_lists/campy_headers_wg.txt",
+        "Vibrio": "/INNUENDO/inputs/v1/core_lists/vibrio_headers_wg.txt"
     }
 }
 
@@ -242,7 +247,8 @@ core_headers_correspondece = {
         "E.coli": "/INNUENDO/inputs/v1/core_lists/ecoli_headers_core.txt",
         "Yersinia": "/INNUENDO/inputs/v1/core_lists/yersinia_headers_core.txt",
         "Salmonella": "/INNUENDO/inputs/v1/core_lists/salmonella_headers_core.txt",
-        "Campylobacter": "/INNUENDO/inputs/v1/core_lists/campy_headers_core.txt"
+        "Campylobacter": "/INNUENDO/inputs/v1/core_lists/campy_headers_core.txt",
+        "Vibrio": "/INNUENDO/inputs/v1/core_lists/vibrio_headers_core.txt"
     }
 }
 
@@ -253,7 +259,8 @@ core_increment_profile_file_correspondece = {
         "E.coli": "/INNUENDO/inputs/v1/indexes/ecoli_core_profiles.tab",
         "Yersinia": "/INNUENDO/inputs/v1/indexes/yersinia_core_profiles.tab",
         "Salmonella": "/INNUENDO/inputs/v1/indexes/salmonella_core_profiles.tab",
-        "Campylobacter": "/INNUENDO/inputs/v1/indexes/campy_core_profiles.tab"
+        "Campylobacter": "/INNUENDO/inputs/v1/indexes/campy_core_profiles.tab",
+        "Vibrio": "/INNUENDO/inputs/v1/indexes/vibrio_core_profiles.tab"
     }
 }
 
@@ -264,7 +271,8 @@ wg_increment_profile_file_correspondece = {
         "E.coli": "/INNUENDO/inputs/v1/indexes/ecoli_wg_profiles.tab",
         "Yersinia": "/INNUENDO/inputs/v1/indexes/yersinia_wg_profiles.tab",
         "Salmonella": "/INNUENDO/inputs/v1/indexes/salmonella_wg_profiles.tab",
-        "Campylobacter": "/INNUENDO/inputs/v1/indexes/campy_wg_profiles.tab"
+        "Campylobacter": "/INNUENDO/inputs/v1/indexes/campy_wg_profiles.tab",
+        "Vibrio": "/INNUENDO/inputs/v1/indexes/vibrio_wg_profiles.tab"
     }
 }
 
