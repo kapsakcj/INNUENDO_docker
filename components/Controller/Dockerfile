@@ -14,7 +14,7 @@ ENV LC_ALL en_US.UTF-8
 
 RUN yum makecache fast \
     && yum -y install epel-release \
-    && yum -y install https://centos7.iuscommunity.org/ius-release.rpm \
+    && yum -y install https://repo.ius.io/ius-release-el7.rpm \
     && yum -y install \
            wget \
            bzip2 \
@@ -68,7 +68,7 @@ RUN git clone https://github.com/bfrgoncalves/INNUENDO_PROCESS_CONTROLLER.git
 WORKDIR INNUENDO_PROCESS_CONTROLLER
 
 # Install and initialize virtual env
-RUN pip install virtualenv
+RUN pip install virtualenv==16.4.0 zipp
 RUN virtualenv flask
 
 # Install repository dependencies
@@ -87,8 +87,8 @@ RUN tar zxf agraph-6.2.1-client-python.tar.gz
 ENV PYTHONPATH="/Controller/INNUENDO_PROCESS_CONTROLLER/agraph-6.2.1-client-python/src"
 
 # Add symlink for python3
-RUN ln -s /usr/bin/python3.6 /usr/bin/python3
-RUN ln -s /usr/bin/pip3.6 /usr/bin/pip3
+#RUN ln -s /usr/bin/python3.6 /usr/bin/python3
+#RUN ln -s /usr/bin/pip3.6 /usr/bin/pip3
 
 
 ########################## Install SLURM #######################################
