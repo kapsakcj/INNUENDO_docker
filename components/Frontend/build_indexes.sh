@@ -276,9 +276,12 @@ if [ ! -f "${outdir}/${1}/legacy_profiles/profiles_VibrioCholerae.tsv" ]; then
      rm ${outdir}/${1}/indexes/vibrio_wg.idx
      rm ${outdir}/${1}/indexes/vibrio_core.ids
      rm ${outdir}/${1}/indexes/vibrio_wg.ids
-     cat ${outdir}/${1}/indexes/vibrio_core_profiles.tab | ${2}/src/main -i ${outdir}/${1}/indexes/vibrio_core -b
-     cat ${outdir}/${1}/indexes/vibrio_wg_profiles.tab | ${2}/src/main -i ${outdir}/${1}/indexes/vibrio_wg -b
+     cat ${outdir}/${1}/indexes/vibrio_core_profiles.tab | ${fast_mlst_path}/src/main -i ${outdir}/${1}/indexes/vibrio_core -b
+     cat ${outdir}/${1}/indexes/vibrio_wg_profiles.tab | ${fast_mlst_path}/src/main -i ${outdir}/${1}/indexes/vibrio_wg -b
 
-     echo "---> Populating Profile Database ..."
-     flask/bin/python mlst_profiles_to_db.py -i ${outdir}/${1}/legacy_profiles/profiles_VibrioCholerae.tsv -c ${outdir}/${1}/classifications/Vcholera_correct_classification.txt -m ${outdir}/${1}/legacy_metadata/Vibrio_cholerae_metadata.txt -d Vibrio -p NFP -v ${4}
+
+### COMMENTING OUT - THESE ARE LEFTOVER LINES FROM THE NON-DOCKER VERSION OF INNUENDO
+### I DO NOT THINK THESE ARE NEEDED FOR DOCKER-COMPOSE VERSION - CJK 2020-08-27
+#     echo "---> Populating Profile Database ..."
+#     flask/bin/python mlst_profiles_to_db.py -i ${outdir}/${1}/legacy_profiles/profiles_VibrioCholerae.tsv -c ${outdir}/${1}/classifications/Vcholera_correct_classification.txt -m ${outdir}/${1}/legacy_metadata/Vibrio_cholerae_metadata.txt -d Vibrio -p NFP -v ${4}
 fi

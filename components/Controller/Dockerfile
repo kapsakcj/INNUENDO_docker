@@ -75,7 +75,7 @@ RUN virtualenv flask
 RUN flask/bin/pip install -r requirements.txt
 
 # Install other dependencies
-RUN flask/bin/pip install future requests
+RUN flask/bin/pip install future requests Werkzeug==0.15.0
 
 # Get allegro client
 RUN wget https://github.com/bfrgoncalves/INNUENDO_files/releases/download/1.0.0/agraph-6.2.1-client-python.tar.gz
