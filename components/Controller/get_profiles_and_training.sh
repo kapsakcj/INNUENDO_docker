@@ -158,7 +158,10 @@ if [ $count_s -eq 1 ]; then
     cd ${output_dir}/serotyping_files
     mkdir escherichia_coli
     cd escherichia_coli
-    wget https://raw.githubusercontent.com/B-UMMI/seq_typing/master/serotyping_reference_sequences/escherichia_coli/1_O_type.fasta
-    wget https://raw.githubusercontent.com/B-UMMI/seq_typing/master/serotyping_reference_sequences/escherichia_coli/2_H_type.fasta
+    wget https://raw.githubusercontent.com/B-UMMI/seq_typing/master/seqtyping/reference_sequences/escherichia_coli/1_O_type.fasta
+    wget https://raw.githubusercontent.com/B-UMMI/seq_typing/master/seqtyping/reference_sequences/escherichia_coli/2_H_type.fasta
+    ## Curtis - seems these PATHS have changed? edited 2020-11-17
+    #wget https://raw.githubusercontent.com/B-UMMI/seq_typing/master/serotyping_reference_sequences/escherichia_coli/1_O_type.fasta
+    #wget https://raw.githubusercontent.com/B-UMMI/seq_typing/master/serotyping_reference_sequences/escherichia_coli/2_H_type.fasta
 
 fi
