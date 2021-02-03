@@ -34,7 +34,7 @@ services:
       - ./inputs/v1/legacy_profiles:/INNUENDO/inputs/v1/legacy_profiles
       - ./components/Frontend/build_allegro.py:/Frontend/INNUENDO_REST_API/build_allegro.py
       - singularity_cache:/mnt/singularity_cache
-      - /home/curtis/github-repos/INNUENDO_REST_API/app:/Frontend/INNUENDO_REST_API/app
+      - /home/pjx8/github-repos/INNUENDO_REST_API/app:/Frontend/INNUENDO_REST_API/app
     ports:
       - "5000:5000"
     depends_on:
